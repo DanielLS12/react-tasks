@@ -17,8 +17,8 @@ export function TaskContextProvider(props) {
       ...tasks,
       {
         id: tasks.length,
-        title: task.title,
-        description: task.description,
+        title: task.title.trim(),
+        description: task.description.trim(),
       },
     ]);
   }

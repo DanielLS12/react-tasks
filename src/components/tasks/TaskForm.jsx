@@ -42,9 +42,7 @@ function TaskForm() {
     <div className="max-w-md mx-auto">
       <form className="bg-slate-800 p-10 mb-4" onSubmit={handleSubmit}>
         <div className=" flex justify-between mb-2">
-          <h1 className="text-white font-bold text-2xl">
-            Crear tarea
-          </h1>
+          <h1 className="text-white font-bold text-2xl">Crear tarea</h1>
           <img
             src="https://images-ext-1.discordapp.net/external/LtwJ8huSL0_DMVTbCulPSwLfjfIZ5C6UL-YLDmNXDmo/https/static.ssb.ee/images/companies/14943484_moonfox-ou_16233542_a_xl.png"
             className="w-10 hover:-translate-y-2 hover:scale-125 transition ease-in-out delay-75 duration-150"
@@ -54,7 +52,7 @@ function TaskForm() {
         <input
           className="w-full bg-gray-100 p-2 rounded-sm mb-2 border-2 border-gray-200 leading-tight focus:outline-none focus:bg-white focus:border-orange-400"
           onChange={(e) => {
-            setTitle(e.target.value);
+            setTitle(e.target.value.trimStart());
           }}
           ref={firstInput}
           placeholder="Escribe tu tarea"
@@ -72,7 +70,7 @@ function TaskForm() {
           className="w-full bg-gray-100 p-2 rounded-sm border-2 border-gray-200 leading-tight focus:outline-none focus:bg-white focus:border-orange-400 mt-2"
           maxLength="25"
           onChange={(e) => {
-            setDesription(e.target.value);
+            setDesription(e.target.value.trimStart());
           }}
           placeholder="Escribe una descripción"
           value={description}
